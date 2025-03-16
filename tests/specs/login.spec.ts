@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   await loginPage.navigate();
 });
 
-test("Verify login functionality with invalid password", async ({ page }) => {
+test("Verify login functionality with invalid password", async () => {
   await loginPage.login(
     testUsers.UserFullData.userlogin,
     faker.internet.password()

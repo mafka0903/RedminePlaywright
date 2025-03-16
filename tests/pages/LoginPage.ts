@@ -2,7 +2,6 @@ import { Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
 
 export class LoginPage extends BasePage {
-  // Локатори
   readonly username = () => this.page.locator('[name="username"]');
   readonly password = () => this.page.locator("#password");
   readonly submit = () => this.page.locator("#login-submit");
@@ -12,7 +11,6 @@ export class LoginPage extends BasePage {
     super(page);
   }
 
-  // Методи
   async navigate() {
     await super.navigate("/login");
   }
