@@ -6,9 +6,9 @@ RedminePlaywright is a project for automated testing of the https://www.redmine.
 
 ### Requirements
 
-Node.js
-npm
-Playwright
+Node.js,
+npm,
+Playwright,
 Git
 
 ### Steps to install
@@ -42,3 +42,6 @@ After running tests, generate an HTML report:
 npx playwright show-report
 
 Report will open in browser, displaying test results.
+
+Reports also avaliable on GitHub pages
+https://mafka0903.github.io/RedminePlaywright/
