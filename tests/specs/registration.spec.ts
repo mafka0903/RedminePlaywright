@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
   await registerPage.navigate();
 });
 
-test("Attempted registration with empty fields", async ({ page }) => {
+test("Attempted registration with empty fields", async () => {
   await registerPage.registrationEmptyField(
     testUsers.UserWithoutEmail.userlogin,
     testUsers.UserWithoutEmail.password,
@@ -21,9 +21,7 @@ test("Attempted registration with empty fields", async ({ page }) => {
   await expect(registerPage.errorMessage()).toBeVisible();
 });
 
-test("Verify that user cannot register with the same data again", async ({
-  page,
-}) => {
+test("Verify that user cannot register with the same data again", async () => {
   await registerPage.registration(
     testUsers.UserFullData.userlogin,
     testUsers.UserFullData.password,

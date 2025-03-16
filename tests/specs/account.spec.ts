@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
   await accountPage.navigate();
 });
 
-test("Verify that the user can change their credentials", async ({ page }) => {
+test("Verify that the user can change their credentials", async () => {
   await accountPage.userLastnameAccount().fill("Вишнівська");
   await accountPage.saveButton().click();
   await expect(accountPage.messageSuccess()).toBeVisible();
