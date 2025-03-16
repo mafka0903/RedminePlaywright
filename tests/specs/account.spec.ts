@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import { AccountPage } from "../pages/AccountPage";
 import { LoginPage } from "../pages/LoginPage";
 import { testUsers, messages } from "../fixtures/data.fixture";
+import { faker } from "@faker-js/faker";
 
 let accountPage: AccountPage;
 
@@ -20,7 +21,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Verify that the user can change their credentials", async () => {
-  await accountPage.userLastnameAccount().fill("Вишнівська");
+  await accountPage.userLastnameAccount().fill(faker.person.lastName());
   await accountPage.saveButton().click();
   await expect(accountPage.messageSuccess()).toBeVisible();
   await expect(accountPage.messageSuccess()).toContainText(
