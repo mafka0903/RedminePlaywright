@@ -47,7 +47,12 @@ jobs:
           path: playwright-report
 
       - name: Deploy report
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: htmlreport
-          folder: playwright-report
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git checkout --orphan htmlreport
+          git rm -rf .
+          mv playwright-report/* .
+          git add .
+          git commit -m "Deploy Playwright report"
+          git push --force origin htmlreport
