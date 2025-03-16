@@ -29,8 +29,8 @@ jobs:
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
-          name: report
-          path: report/
+          name: playwright-report
+          path: playwright-report/
 
   deploy:
     needs: test
@@ -43,11 +43,11 @@ jobs:
       - name: Download report
         uses: action/download-artifact@v4
         with:
-          name: report
-          path: report
+          name: playwright-report
+          path: playwright-report
 
       - name: Deploy report
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: htmlreport
-          folder: report
+          folder: playwright-report
